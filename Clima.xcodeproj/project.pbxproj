@@ -14,6 +14,7 @@
 		AD019E79255F462D00472822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD019E78255F462D00472822 /* Assets.xcassets */; };
 		AD019E7C255F462D00472822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD019E7A255F462D00472822 /* LaunchScreen.storyboard */; };
 		ADC56F942565816200BF37C0 /* ClimaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC56F932565816200BF37C0 /* ClimaData.swift */; };
+		ADCA16402569AFB100AF419E /* ClimaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCA163F2569AFB100AF419E /* ClimaModelo.swift */; };
 		ADF6581F2564B11A0067AC70 /* ClimaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF6581E2564B11A0067AC70 /* ClimaManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		AD019E7B255F462D00472822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD019E7D255F462D00472822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC56F932565816200BF37C0 /* ClimaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaData.swift; sourceTree = "<group>"; };
+		ADCA163F2569AFB100AF419E /* ClimaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaModelo.swift; sourceTree = "<group>"; };
 		ADF6581E2564B11A0067AC70 /* ClimaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				AD019E7D255F462D00472822 /* Info.plist */,
 				ADF6581E2564B11A0067AC70 /* ClimaManager.swift */,
 				ADC56F932565816200BF37C0 /* ClimaData.swift */,
+				ADCA163F2569AFB100AF419E /* ClimaModelo.swift */,
 			);
 			path = Clima;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCA16402569AFB100AF419E /* ClimaModelo.swift in Sources */,
 				AD019E74255F462900472822 /* ViewController.swift in Sources */,
 				AD019E70255F462900472822 /* AppDelegate.swift in Sources */,
 				ADF6581F2564B11A0067AC70 /* ClimaManager.swift in Sources */,
