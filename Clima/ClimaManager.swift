@@ -9,13 +9,15 @@ import Foundation
 
 protocol ClimaManagerDelegate{
     func actualizarClima(clima : ClimaModelo)
+    
+    func huboError(cualError : Error)
 }
 
 struct ClimaManager {
     
     var delegado : ClimaManagerDelegate?
     
-    let climaURL = "https://api.openweathermap.org/data/2.5/weather?q=Morelia&appid=481c3f56dd564f999cdd85940ab390e8&lang=es&units=metric"
+    let climaURL = "https://api.openweathermap.org/data/2.5/weather?appid=481c3f56dd564f999cdd85940ab390e8&lang=es&units=metric"
     func fetchClima(nombreCiudad : String) {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?q="+nombreCiudad+"&appid=481c3f56dd564f999cdd85940ab390e8&lang=es&units=metric"
         print(urlString)
@@ -34,7 +36,8 @@ struct ClimaManager {
             //let tarea =  session.dataTask(with: url, completionHandler: handle(data:respuesta:error:))
             let tarea = session.dataTask(with: url) { (data, respuesta, error) in
                 if error != nil{
-                    print(error!.localizedDescription)
+                    //print(error!.localizedDescription)
+                    delegado?.huboError(cualError: error!)
                     return
                 }
                 if let datosSeguros = data {
@@ -71,6 +74,7 @@ struct ClimaManager {
             
         }catch{
             print(error)
+            delegado?.huboError(cualError: error)
             return nil
         }
         

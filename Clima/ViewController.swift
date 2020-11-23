@@ -9,23 +9,46 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegate {
     var climaIcono : String = ""
-    var climanombreCiudad : String = ""
-    var climaDescrip : String = ""
-    var temperaturaClima : String = ""
-    
     var climaManager = ClimaManager()
     
+    func huboError(cualError: Error) {
+        DispatchQueue.main.async {
+            self.descripcionClimaLabel.text = "NOT FOUND"
+            self.ciudadLabel.text = "Ciudad NO Encontrada"
+            self.temperaturaLabel.text = "0º C"
+            self.climaImageView.image = #imageLiteral(resourceName: "mikusad_preview_rev_1")
+        }
+    }
+    
     func actualizarClima(clima: ClimaModelo) {
-        self.climaDescrip = clima.descripcionCiudad
-        self.climanombreCiudad = clima.nombreCiudad
-        self.temperaturaClima = String(clima.temperaturaCelsius)
+        
         self.climaIcono = clima.icon
         print(climaIcono)
         print(clima.temperaturaCelsius)
+        
+        
+        DispatchQueue.main.async {
+            self.temperaturaLabel.text = String(clima.temperaturaCelsius)
+            self.descripcionClimaLabel.text = clima.descripcionCiudad
+            self.ciudadLabel.text = clima.nombreCiudad
+            self.fondoClimaImage.image = UIImage(named: clima.obtenerCondicionClima)
+            //Consumir ICONS desde la API
+            print("El icono"+self.climaIcono)
+            let url = NSURL(string: "https://openweathermap.org/img/wn/"+self.climaIcono+"@2x.png")
+            print(url!)
+            if let data = NSData(contentsOf: url! as URL) {
+                self.climaImageView.image = UIImage(data: data as Data)
+            }
+            
+            
+        }
+        
+        
     }
     
     
     
+    @IBOutlet weak var fondoClimaImage: UIImageView!
     @IBOutlet weak var descripcionClimaLabel: UILabel!
     @IBOutlet weak var climaImageView: UIImageView!
     @IBOutlet weak var temperaturaLabel: UILabel!
@@ -58,7 +81,9 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
     
 //Boton de Buscar en Interfaz
     @IBAction func BuscarButton(_ sender: UIButton) {
-        
+        ciudadLabel.text = BuscarTextField.text
+        climaManager.fetchClima(nombreCiudad: BuscarTextField.text!)
+        //reflejarDatos()
         if BuscarTextField.text == ""{
             let alertaNada = UIAlertController(title: "No hay Ciudad", message: "El lugar que intentas ingresar NO es valido", preferredStyle: .alert)
             
@@ -70,22 +95,21 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
             
         }
         
-        reflejarDatos()
-        reflejarDatos()
+        
         
     }
     
     func reflejarDatos(){
-        ciudadLabel.text = BuscarTextField.text
-        climaManager.fetchClima(nombreCiudad: BuscarTextField.text!)
-        temperaturaLabel.text = temperaturaClima + "º C"
-        descripcionClimaLabel.text = climaDescrip
-        print("El icono"+climaIcono)
-        let url = NSURL(string: "https://openweathermap.org/img/wn/"+climaIcono+"@2x.png")
-        print(url!)
-        if let data = NSData(contentsOf: url! as URL) {
-            climaImageView.image = UIImage(data: data as Data)
+        DispatchQueue.main.async {
+            print("El icono"+self.climaIcono)
+            let url = NSURL(string: "https://openweathermap.org/img/wn/"+self.climaIcono+"@2x.png")
+            print(url!)
+            if let data = NSData(contentsOf: url! as URL) {
+                self.climaImageView.image = UIImage(data: data as Data)
+            }
+            
         }
+        
     }
     
 

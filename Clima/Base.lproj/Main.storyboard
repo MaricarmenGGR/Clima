@@ -49,22 +49,22 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ghK-Ub-RAa">
-                                <rect key="frame" x="107" y="273" width="161.5" height="81.5"/>
+                                <rect key="frame" x="50" y="273" width="275" height="81.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 º C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8O-qF-7cz">
-                                        <rect key="frame" x="62" y="0.0" width="37.5" height="20.5"/>
+                                        <rect key="frame" x="119" y="0.0" width="37.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ciudad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcB-nZ-jHW">
-                                        <rect key="frame" x="53.5" y="30.5" width="54.5" height="20.5"/>
+                                        <rect key="frame" x="110.5" y="30.5" width="54.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion de Clima" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYv-kV-Ocz">
-                                        <rect key="frame" x="0.0" y="61" width="161.5" height="20.5"/>
+                                        <rect key="frame" x="57" y="61" width="161.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                 <rect key="frame" x="126" y="149" width="122" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="3PV-IW-UWo"/>
-                                    <constraint firstAttribute="height" constant="80" id="mUC-ia-tPx"/>
+                                    <constraint firstAttribute="height" constant="80" id="mUC-ia-tPx" userLabel="height = 130"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -83,10 +83,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xIB-MB-8zT" firstAttribute="top" secondItem="num-03-MGk" secondAttribute="top" id="2wP-eN-2Y3"/>
-                            <constraint firstItem="ghK-Ub-RAa" firstAttribute="leading" secondItem="num-03-MGk" secondAttribute="leading" constant="107" id="Cjh-eJ-UGm"/>
+                            <constraint firstItem="num-03-MGk" firstAttribute="trailing" secondItem="ghK-Ub-RAa" secondAttribute="trailing" constant="50" id="3wG-Y7-It1"/>
                             <constraint firstItem="xIB-MB-8zT" firstAttribute="leading" secondItem="num-03-MGk" secondAttribute="leading" id="GWs-0a-8Xd"/>
-                            <constraint firstItem="ghK-Ub-RAa" firstAttribute="top" secondItem="8L4-5k-awo" secondAttribute="bottom" constant="44" id="OW7-K4-8cZ"/>
-                            <constraint firstItem="num-03-MGk" firstAttribute="trailing" secondItem="ghK-Ub-RAa" secondAttribute="trailing" constant="106.5" id="PFc-1W-YGM"/>
+                            <constraint firstItem="ghK-Ub-RAa" firstAttribute="leading" secondItem="num-03-MGk" secondAttribute="leading" constant="50" id="Lxd-Bh-P4n"/>
+                            <constraint firstItem="ghK-Ub-RAa" firstAttribute="top" secondItem="8L4-5k-awo" secondAttribute="bottom" constant="44" id="NJx-cO-hJA"/>
                             <constraint firstItem="C9E-7F-qPT" firstAttribute="top" secondItem="num-03-MGk" secondAttribute="top" constant="66" id="TTb-SW-O2a"/>
                             <constraint firstItem="xIB-MB-8zT" firstAttribute="bottom" secondItem="num-03-MGk" secondAttribute="bottom" id="a9R-Qc-W3Q"/>
                             <constraint firstItem="C9E-7F-qPT" firstAttribute="leading" secondItem="num-03-MGk" secondAttribute="leading" constant="16" id="dlm-Xa-45r"/>
@@ -102,6 +102,7 @@
                         <outlet property="ciudadLabel" destination="GcB-nZ-jHW" id="Kh7-XR-Na0"/>
                         <outlet property="climaImageView" destination="8L4-5k-awo" id="bfi-nB-fxp"/>
                         <outlet property="descripcionClimaLabel" destination="LYv-kV-Ocz" id="CRH-nX-hEf"/>
+                        <outlet property="fondoClimaImage" destination="xIB-MB-8zT" id="bfi-mn-1pw"/>
                         <outlet property="temperaturaLabel" destination="y8O-qF-7cz" id="3q3-Vj-bmZ"/>
                     </connections>
                 </viewController>
