@@ -11,6 +11,10 @@ struct ClimaModelo {
     let nombreCiudad : String
     let temperaturaCelsius : Double
     let descripcionCiudad : String
+    let tempMax : Double
+    let tempMin : Double
+    let presion : Int
+    let humedad : Int
     let icon : String
     
     

@@ -17,6 +17,10 @@ struct ClimaData : Codable {
 
 struct Main : Codable {
     let temp : Double
+    let temp_min : Double
+    let temp_max : Double
+    let pressure : Int
+    let humidity : Int
 }
 
 struct Coord : Codable{
