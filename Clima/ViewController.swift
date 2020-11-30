@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        //locationManager.requestLocation()
+        locationManager.requestLocation()
         
         climaManager.delegado = self
         
